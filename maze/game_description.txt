@@ -1,0 +1,12 @@
+The goal of the game is to navigate a character from the entrance of a maze to the exit using the WASD keys.
+
+The game offers six difficulty levels: Beginner, Easy, Medium, Advanced, Hard, and Custom Shape. The Custom Shape mode matches 
+the Medium difficulty, but replaces the standard rectangular maze with a randomly generated shape.
+
+As difficulty increases, the maze layout becomes more complex. Starting from certain difficulty levels, a timer is introduced; if time 
+runs out, the game ends with a "Failed to escape" message. On Hard difficulty, monsters spawn along certain paths after a given 
+amount of time. These monsters wander randomly, but if they spot the player, they will chase them for a short duration. Touching a 
+monster results in an immediate game over.
+
+The final score depends on the selected difficulty and the time taken to complete the maze. A dedicated stats page displays the overall 
+high score as well as the best completion times for each difficulty level.

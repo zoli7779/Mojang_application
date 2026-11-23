@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <!-- Stylesheets (CSS) can go here -->
+    <link rel="stylesheet" href="css/page_layout.css">
+	<link rel="stylesheet" href="css/animation.css">
+	
+	<!-- 1. Official Supabase library -->
+	<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+	<!-- 2. Your shared Supabase helper file (pay attention to the path, e.g., if you are one folder down, then...) ../site_controller/...) -->
+	<script src="../../site_controller/supabase_client.js"></script>
+</head>
+<body>
+
+    <!-- 1. Header Section -->
+    <header>
+        <h1>Site Name / Logo</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- 2. Main Content Area -->
+    <main>
+        <!-- Primary content block -->
+        <section id="home">
+            <h2>Welcome to the Site!</h2>
+            <p>This is the placeholder text for the homepage introduction.</p>
+        </section>
+
+        <!-- Additional sections -->
+        <section id="about">
+            <h2>About Us</h2>
+            <p>Information about the company or project goes here.</p>
+        </section>
+    </main>
+
+    <!-- 3. Sidebar (optional, e.g., for blogs or panels) -->
+    <aside>
+        <h3>Related News</h3>
+        <p>Secondary information or widgets would go here.</p>
+    </aside>
+
+    <!-- 4. Footer Section -->
+    <footer>
+        <p>&copy; 2026 All rights reserved.</p>
+        <p><a href="#privacy">Privacy Policy</a></p>
+    </footer>
+
+    <!-- JavaScript files can go here -->
+    <script src="script.js"></script>
+</body>
+</html>

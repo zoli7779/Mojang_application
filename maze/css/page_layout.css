@@ -1,0 +1,22 @@
+/* CSS class to hide the menu */
+.hidden {
+    display: none;
+}
+
+/* Basic styling to make it look nice */
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    background-color: #f0f0f0;
+    width: 200px;
+}
+nav li a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+    border-bottom: 1px solid #ccc;
+}
+nav li a:hover {
+    background-color: #ddd;
+}

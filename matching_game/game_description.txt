@@ -1,0 +1,8 @@
+The goal of the game is to match as many pairs as possible by dragging images to their corresponding names or texts.
+
+The game is time-based. If time runs out, the final score is calculated based on the number of correct matches. If a player 
+finds all pairs before the timer expires, the current round ends immediately, awarding bonus points based on the remaining time.
+Players can then start a new round.
+
+There are five difficulty levels: Beginner, Easy, Medium, Advanced, and Hard. As the difficulty increases, players must find a 
+higher number of pairs within the time limit. A dedicated leaderboard/stats page displays the player's high score.

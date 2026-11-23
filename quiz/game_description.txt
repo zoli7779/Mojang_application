@@ -1,0 +1,5 @@
+The goal of the game is for players to answer as many questions as accurately as possible. The game features multiple question 
+types: numerical input, text input, fill-in-the-blank via drop-down menus, and standard 4-option multiple choice.
+
+To keep the game accessible, questions with higher global success rates are prioritized in the selection pool. Players must answer 
+within a limited time frame, and correct answers yield points based on speed. A dedicated stats page tracks each player's high score.

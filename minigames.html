@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Game Launcher - Mini Games</title>
+    <link rel="stylesheet" href="../site_controller/css/css_mini/page_layout.css">
+    <link rel="stylesheet" href="../site_controller/css/css_mini/animation.css">
+</head>
+<body>
+
+	<canvas id="bgCanvas"></canvas>
+    
+	<!-- Background Music Audio Element -->
+    <audio id="bgMusic" loop>
+        <source src="../site_controller/sounds/background_music/background_music_mini/temporary_background_music.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Click Sound Audio Element -->
+    <audio id="clickSound">
+        <source src="background_music/kattintas_hang.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Top-Right Audio Controls (Music & Sounds separately) -->
+    <div class="top-right-music">
+        <button onclick="toggleMusic()" id="musicBtn" class="launcher-btn music-btn">Music: ON</button>
+        <button onclick="toggleSounds()" id="soundBtn" class="launcher-btn music-btn">Sounds: ON</button>
+    </div>
+
+    <script>
+        // Music Toggle Logic (Restarts from beginning when turned back ON)
+        function toggleMusic() {
+            let music = document.getElementById("bgMusic");
+            let btn = document.getElementById("musicBtn");
+            if (music.paused) {
+                music.currentTime = 0; // Rewind to the beginning
+                music.play();
+                btn.textContent = "Music: ON";
+            } else {
+                music.pause();
+                btn.textContent = "Music: OFF";
+            }
+        }
+
+        // Global variable to track sound effects state
+        let soundsEnabled = true;
+
+        // Sounds Toggle Logic
+        function toggleSounds() {
+            let btn = document.getElementById("soundBtn");
+            soundsEnabled = !soundsEnabled;
+            if (soundsEnabled) {
+                btn.textContent = "Sounds: ON";
+            } else {
+                btn.textContent = "Sounds: OFF";
+            }
+        }
+        
+        // Click Sound Function that checks if sounds are enabled
+        function playClickSound() {
+            if (!soundsEnabled) return; // Do nothing if sounds are turned off
+            let sound = document.getElementById("clickSound");
+            sound.currentTime = 0; 
+            sound.play();
+        }
+    </script>
+
+    <!-- Fixed Back to Main Menu button in the bottom-left corner -->
+    <div class="bottom-left-menu">
+        <a href="../main_page.html" class="launcher-btn" onclick="playClickSound()">← Back to Main Menu</a>
+    </div>
+
+    <!-- Main launcher menu divided into two rows for flexible alignment -->
+    <div class="launcher-menu">
+    
+        <!-- Top Row (3 games, shifted slightly to the left) -->
+        <div class="game-row top-row">
+            <!-- 1. Jigsaw Puzzle Box -->
+            <div class="game-card">
+                <div class="game-img-container">
+                    <img src="jigsaw_puzzle/images/preview.png" alt="Jigsaw Puzzle Preview">
+                </div>
+                <div class="game-title">
+                    <a href="jigsaw_puzzle/jigsaw_puzzle.html" class="launcher-btn" onclick="playClickSound()">Start Jigsaw Puzzle</a>
+                </div>
+            </div>
+
+            <!-- 2. Matching Game Box -->
+            <div class="game-card">
+                <div class="game-img-container">
+                    <img src="matching_game/images/preview.png" alt="Matching Game Preview">
+                </div>
+                <div class="game-title">
+                    <a href="matching_game/matching_game.html" class="launcher-btn" onclick="playClickSound()">Start Matching Game</a>
+                </div>
+            </div>
+
+            <!-- 3. Maze Box -->
+            <div class="game-card">
+                <div class="game-img-container">
+                    <img src="maze/images/preview.png" alt="Maze Preview">
+                </div>
+                <div class="game-title">
+                    <a href="maze/maze.html" class="launcher-btn" onclick="playClickSound()">Start Maze</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Row (2 games, shifted slightly to the right) -->
+        <div class="game-row bottom-row">
+            <!-- 4. Quiz Box -->
+            <div class="game-card">
+                <div class="game-img-container">
+                    <img src="quiz/images/preview.png" alt="Quiz Preview">
+                </div>
+                <div class="game-title">
+                    <a href="quiz/quiz.html" class="launcher-btn" onclick="playClickSound()">Start Quiz</a>
+                </div>
+            </div>
+
+            <!-- 5. Target Shooting Game Box -->
+            <div class="game-card">
+                <div class="game-img-container">
+                    <img src="target_shooting_game/images/preview.png" alt="Target Shooting Preview">
+                </div>
+                <div class="game-title">
+                    <a href="target_shooting_game/target_shooting_game.html" class="launcher-btn" onclick="playClickSound()">Start Target Shooting</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,9 @@
+The goal of the game is to hit as many targets as possible using various weapons, including a bow, crossbow, throwing stone, 
+and sling. The more targets players hit, the higher their score.
+
+The game features five difficulty levels: Beginner, Easy, Medium, Advanced, and Hard. Increasing the difficulty raises the 
+total number of targets to hit.
+
+A round ends when all targets are hit, or when the player runs out of ammunition with targets still remaining. Clearing all 
+targets displays a "Congratulations!" victory message, while running out of ammo triggers a "Unfortunately, you failed to hit all targets" 
+game over screen. A dedicated stats page displays the player's high score.

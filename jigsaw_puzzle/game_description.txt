@@ -1,0 +1,8 @@
+The game challenges players to solve a puzzle by assembling small pieces. Players can select a preset image or create 
+their own. Custom images can be uploaded directly to generate a puzzle. Alternatively, players can construct an image 
+using geometric lines and circles by entering their mathematical equations and defining their domains.
+
+The puzzle grid size is customizable within set limits, up to a maximum of 30 rows and 50 columns. To assist players, 
+the game features separate assembly and sorting trays where unplaced pieces can be grouped—for example, by shape—or arranged side by side.
+
+A puzzle is complete when all pieces are correctly fitted into place, after which the player can start a new puzzle.

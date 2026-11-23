@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Launcher</title>
+    <!-- Include html2canvas library for taking screenshots -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+	<!-- 1. Hivatalos Supabase könyvtár -->
+	<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+	<!-- 2. A te közös Supabase segédfájlod (figyelj az útvonalra, pl. ha egy mappávaljebb vagy, akkor ../site_controller/...) -->
+	<script src="../site_controller/supabase_client.js"></script>
+</head>
+<body>
+
+    <!-- Screenshot button combined with click sound -->
+    <button onclick="playClickSound(); takeScreenshot();">Take photo</button>
+
+    <!-- Audio element for click sound -->
+    <audio id="clickSound">
+        <source src="sounds/click.mp3" type="audio/mpeg">
+    </audio>
+
+   <script>
+	// Function to play the click sound
+	function playClickSound() {
+		let sound = document.getElementById("clickSound");
+		// This line rewinds the sound to the beginning, so if you click twice quickly 
+		// in succession, you don't have to wait for it to finish, it will play again immediately.
+		sound.currentTime = 0; 
+		sound.play();
+	}
+
+	// Function to take a screenshot and send it to the Node.js server for saving
+	function takeScreenshot() {
+		// We take a screenshot of the entire page
+		html2canvas(document.body).then(function(canvas) {
+			
+			// Convert the canvas to a base64 image URL
+			let imageURL = canvas.toDataURL("image/png");
+        
+			// Send the image data to our local Node.js server via POST request
+			fetch('/save-screenshot', {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json'
+				},
+				body: JSON.stringify({ image: imageURL })
+			})
+			.then(response => response.json())
+			.then(data => {
+				if (data.success) {
+					console.log("Screenshot successfully saved to the screenshots folder!");
+				} else {
+					console.error("Failed to save screenshot.");
+				}
+			})
+			.catch(error => {
+				console.error("Error:", error);
+			});
+		});
+	}
+	</script>
+ <p>
+ kirako
+ </p>
+</body>
+</html>
