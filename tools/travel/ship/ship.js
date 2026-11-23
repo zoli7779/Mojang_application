@@ -1,0 +1,7 @@
+function control(){
+	
+}
+
+function sail(){
+	
+}

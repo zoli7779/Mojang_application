@@ -1,0 +1,7 @@
+function rotate(){
+	
+}
+
+function tthrow(){
+	
+}

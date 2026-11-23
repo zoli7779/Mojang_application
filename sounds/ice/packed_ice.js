@@ -1,0 +1,7 @@
+function slide(){
+	
+}
+
+function sound(){
+	
+}

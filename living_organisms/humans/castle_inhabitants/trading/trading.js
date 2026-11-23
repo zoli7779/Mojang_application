@@ -1,0 +1,7 @@
+function trade(){
+	
+}
+
+function sound(){
+	
+}

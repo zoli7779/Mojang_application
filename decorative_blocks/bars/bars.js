@@ -1,0 +1,7 @@
+function connect(){
+	
+}
+
+function sound(){
+	
+}

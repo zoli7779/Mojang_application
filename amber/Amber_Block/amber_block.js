@@ -1,0 +1,7 @@
+function power(){
+	
+}
+
+function sound(){
+	
+}

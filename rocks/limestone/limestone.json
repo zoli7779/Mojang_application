@@ -1,0 +1,22 @@
+{
+    "id": "limestone",
+    "name": "Limestone",
+    "hardness": 4,
+    "break_time": 1.5,
+    "image": "limestone/texture.png",
+    "sound": {
+	  "walk": "limestone/sounds/walk.mp3"
+      "hit": "limestone/sounds/hit.mp3",
+      "break": "limestone/sounds/break.mp3",
+      "place": "limestone/sounds/place.mp3"
+    },
+    "special_property": "reacts_with_acid",
+	"spawn_rate": 25,
+    "elevation": {
+      "min": 0,
+	  "avg":23,
+      "max": 120
+    },
+	"transparency": 0.8,
+	"blast_resistance": 12.0
+}

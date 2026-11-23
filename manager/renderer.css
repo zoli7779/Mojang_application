@@ -1,0 +1,164 @@
+body {
+			margin: 0;
+			padding: 0;
+			overflow: hidden;
+			background-color: #1a1a1a;
+			font-family: sans-serif;
+		}
+		#canvas-container {
+			width: 100vw;
+			height: 100vh;
+			display: block;
+		}
+		#ui-overlay {
+			position: absolute;
+			top: 10px;
+			left: 10px;
+			color: white;
+			background: rgba(0, 0, 0, 0.6);
+			padding: 10px 15px;
+			border-radius: 8px;
+			pointer-events: none;
+		}
+		.grid_squares {
+            width: 1vw;
+            height: 1vw;
+            background-color: yellow;
+            border: 0px solid navy;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+			z-index:4;
+			overflow-x: auto;
+			overflow-y: auto;
+		}
+		.grid_squares2 {
+            width: 1vw;
+            height: 1vw;
+            background-color: red;
+            border: 0px solid navy;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+			z-index:4;
+			overflow-x: auto;
+			overflow-y: auto;
+		}
+		.cover {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+        }
+		.mountain_tile {
+			width:1vw;
+			height:1vw;
+			background-color: pink;
+            border: 0px solid navy;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+			z-index:5;
+			overflow-x: auto;
+			overflow-y: auto;
+			color: black;
+		}
+		
+		
+//this is not for here, temporary place
+
+const container = document.getElementById('canvas-container');
+
+const scene = new THREE.Scene();
+scene.background = new THREE.Color(0x1a1a1a); 
+
+const camera = new THREE.PerspectiveCamera(
+  60,
+  window.innerWidth / window.innerHeight,
+  0.1,
+  1000
+);
+camera.position.set(40, 50, 60);
+
+const renderer = new THREE.WebGLRenderer({ antialias: true });
+renderer.setSize(window.innerWidth, window.innerHeight);
+renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+container.appendChild(renderer.domElement);
+
+const controls = new THREE.OrbitControls(camera, renderer.domElement);
+controls.enableDamping = true;
+controls.dampingFactor = 0.05;
+
+const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
+scene.add(ambientLight);
+
+const dirLight = new THREE.DirectionalLight(0xffffff, 0.8);
+dirLight.position.set(30, 50, 20);
+scene.add(dirLight);
+
+const MAX_VOXELS = 500000;
+const geometry = new THREE.BoxGeometry(1, 1, 1);
+const material = new THREE.MeshLambertMaterial({ color: 0x4caf50 });
+
+const voxelMesh = new THREE.InstancedMesh(geometry, material, MAX_VOXELS);
+voxelMesh.instanceMatrix.setUsage(THREE.DynamicDrawUsage);
+voxelMesh.count = 0;
+scene.add(voxelMesh);
+
+const dummy = new THREE.Object3D();
+
+function rajzol3DVoxelTerkep(tombToDraw, szin = 0x4caf50) {
+  if (!tombToDraw || !Array.isArray(tombToDraw)) return;
+
+  const darabszam = Math.min(tombToDraw.length, MAX_VOXELS);
+
+  for (let r = 0; r < darabszam; r++) {
+    const elem = tombToDraw[r];
+    if (elem) {
+      
+      const x = elem[1] !== undefined ? elem[1] : elem[0];
+      const y = elem[2] !== undefined ? elem[2] : elem[1];
+      const z = elem[3] !== undefined ? elem[3] : elem[2];
+
+      dummy.position.set(x, z, y);
+      dummy.updateMatrix();
+
+      voxelMesh.setMatrixAt(r, dummy.matrix);
+    }
+  }
+
+  voxelMesh.count = darabszam;
+  
+  voxelMesh.instanceMatrix.needsUpdate = true;
+}
+
+function animate() {
+  requestAnimationFrame(animate);
+  controls.update();
+  renderer.render(scene, camera);
+}
+
+animate();
+
+window.addEventListener('resize', () => {
+  camera.aspect = window.innerWidth / window.innerHeight;
+  camera.updateProjectionMatrix();
+  renderer.setSize(window.innerWidth, window.innerHeight);
+});
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+
+<div id="canvas-container"></div>
+<div id="ui-overlay">
+	<strong>3D voxel view</strong><br>
+	left mouse button: rotation<br>
+	scroll wheel: zooming<br>
+	right mouse button: moving
+</div>

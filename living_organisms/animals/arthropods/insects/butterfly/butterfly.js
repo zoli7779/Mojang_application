@@ -1,0 +1,7 @@
+function fly(){
+	
+}
+
+function walk(){
+	
+}

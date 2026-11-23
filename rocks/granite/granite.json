@@ -1,0 +1,21 @@
+{
+    "id": "granite",
+    "name": "Granite",
+    "hardness": 8,
+    "break_time": 3.5,
+    "image": "granite/texture.png",
+    "sound": {
+	  "walk": "granite/sounds/walk.mp3"
+      "hit": "granite/sounds/hit.mp3",
+      "break": "granite/sounds/break.mp3",
+      "place": "granite/sounds/place.mp3"
+    },
+	"spawn_rate": 25,
+    "elevation": {
+      "min": 0,
+	  "avg":23,
+      "max": 120
+    },
+	"transparency": 0.8,
+	"blast_resistance": 12.0
+}

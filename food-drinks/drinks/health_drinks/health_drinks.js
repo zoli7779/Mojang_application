@@ -1,0 +1,3 @@
+function give(){
+	//effects
+}

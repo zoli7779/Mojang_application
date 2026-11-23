@@ -1,0 +1,2 @@
+let cave_list=[[10,2 //Isztimér],[11,1.8 //Bodajk],[7.5,1.7 //Csesznek],[3.5,4.3 //Nagygörbő],[12,1.4 //Csákvári],[11.5,1.3 //Gánt],[20,-2 //Csörgő-lyuk],
+[29,-2.9 //Istállós-kői], [31,-3 //Szeleta], [11,9 //Abaliget],[31.2,-4.7 //Baradla],[31.1,-4.7 //Béke]];

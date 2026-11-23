@@ -1,0 +1,7 @@
+function damage(){
+	
+}
+
+function durability(){
+	
+}

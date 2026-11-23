@@ -1,0 +1,7 @@
+function draw(){
+	
+}
+
+function fade(){
+	
+}

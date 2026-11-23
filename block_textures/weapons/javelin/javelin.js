@@ -1,0 +1,7 @@
+function tthrow(){
+	
+}
+
+function sound(){
+	
+}

@@ -1,0 +1,7 @@
+function move(){
+	
+}
+
+function disappear(){
+	
+}

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>main website</title>
+</head>
+<body>
+	<script type="module" src="../living_organisms/animals/animal_handler/animal_handler.js"></script>
+	<script type="module" src="../living_organisms/fungi/fungi_handler.js"></script>
+	<script type="module" src="../living_organisms/human/human_handler.js"></script>
+	<script type="module" src="../living_organisms/plants/vegetation.js"></script>
+	<script type="module" src="../climate/climate.js"></script>
+	<script type="module" src="../database/worlds/statistics/statistics.js"></script>
+	<script type="module" src="../food/food_handler.js"></script>
+	<script type="module" src="../images/image_creator.js"></script>
+	<script type="module" src="../natural_phenomena/natural_phenomena.js"></script>
+	<script type="module" src="../ores/ores.js"></script> 
+	<script type="module" src="../physical_phenomena/items.js"></script>
+	<script type="module" src="../physical_phenomena/physical_phenomena.js"></script>
+	<script type="module" src="../player/actions.js"></script>
+	<script type="module" src="../player/movement.js"></script>
+	<script type="module" src="../player/player.js"></script>
+	<script type="module" src="../rocks/rocks.js"></script>
+	<script type="module" src="../saving/saving.js"></script>
+	<script type="module" src="../server/multiplayer.js"></script>
+	<script type="module" src="../tools/item_handler.js"></script>
+	<script type="module" src="../weather/weather_controller.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <h1>Welcome!</h1>
+    <p>This website is where you can access my game and read information about it.</p>
+	<br>
+	<a href="survive.html" target="_blank">game</a>
+	
+	<div id="main-menu">
+		<!-- Singleplayer game mode button -->
+		<button onclick="startSingleplayer()">Egyjátékos mód</button>
+		<!-- Opens the multiplayer submenu -->
+		<button onclick="openMultiplayerMenu()">Többjátékos mód</button>
+	</div>
+
+	<!-- Multiplayer submenu (hidden by default) -->
+	<div id="multiplayer-menu" style="display: none;">
+		<h2>Többjátékos Játék</h2>
+    
+		<!-- Creates the world/game session -->
+		<button onclick="hostGame()">Világ Létrehozása (Host)</button>
+    
+		<br><br>
+    
+		<!-- Input field for entering the connection code or IP address -->
+		<input type="text" id="room-code-input" placeholder="Írd be a csatlakozási kódot / IP-t...">
+		<!-- Button to connect to the hosted game -->
+		<button onclick="joinGame()">Csatlakozás</button>
+    
+		<!-- Returns to the main menu -->
+		<button onclick="backToMainMenu()">Vissza</button>
+	</div>
+
+<script>
+
+		// Function called when the Host button is clicked in the menu
+	function onHostGameClick() {
+		const message = hostGame();
+		alert(message + " Please go to the LAN sharing page to generate your code.");
+	}
+
+	// Function called when the Share to LAN button is clicked on the other page
+	function onShareToLanClick() {
+		const code = shareToLan();
+		alert(`Game shared on LAN! Your connection code is: ${code}`);
+	}
+
+	// Function called when the Join button is clicked
+	function onJoinGameClick() {
+		const enteredCode = document.getElementById('room-code-input').value;
+		
+		// Call the server logic function
+		const result = joinGame(enteredCode);
+    
+		// Show the result message to the user
+		alert(result.message);
+
+		if (result.success) {
+			// Here you can call your function that loads the game interface for the guest
+			// loadGameScreen();
+		}
+	}
+
+</script>
+
+</body>
+</html>

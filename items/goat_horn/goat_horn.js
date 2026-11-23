@@ -1,0 +1,7 @@
+function use(){
+	
+}
+
+function sound(){
+	
+}

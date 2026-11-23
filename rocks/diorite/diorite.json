@@ -1,0 +1,21 @@
+{
+    "id": "diorite",
+    "name": "Diorite",
+    "hardness": 7,
+    "break_time": 3.2,
+    "image": "diorite/texture.png",
+    "sound": {
+	  "walk": "diorite/sounds/walk.mp3",
+      "hit": "diorite/sounds/hit.mp3",
+      "break": "diorite/sounds/break.mp3",
+      "place": "diorite/sounds/place.mp3"
+    },
+	"spawn_rate": 25,
+    "elevation": {
+      "min": 0,
+	  "avg":23,
+      "max": 120
+    },
+	"transparency": 0.8,
+	"blast_resistance": 12.0
+}

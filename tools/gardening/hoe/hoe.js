@@ -1,0 +1,7 @@
+function hoe(){
+	
+}
+
+function sound(){
+	
+}

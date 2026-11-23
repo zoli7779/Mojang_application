@@ -1,0 +1,7 @@
+function place(){
+	
+}
+
+function sound(){
+	
+}

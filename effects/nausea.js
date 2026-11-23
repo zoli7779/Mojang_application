@@ -1,0 +1,3 @@
+function nausea(){
+	//worse view
+}

@@ -1,0 +1,15 @@
+{
+	"id": "bipr",
+	"name": "Birch_Pressure_Plate",
+	"hardness": 7,
+	"break_time": 3.0,
+	"image": "andesite/texture.png",
+	"sound": {
+	  "walk": "andesite/sounds/walk.mp3"
+	  "hit": "andesite/sounds/hit.mp3",
+      "break": "andesite/sounds/break.mp3",
+      "place": "andesite/sounds/place.mp3"
+	},
+	"transparency": 0.8,
+	"blast_resistance": 12.0
+}
