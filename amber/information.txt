@@ -1,0 +1,28 @@
+1. magnetism to place puzzle pieces in random positions
+2. spherical wave propagation and reflection for navigation in mazes
+3. oscillations for water animation
+4. thermodynamics for block appearance
+5. net force calculation during rockslides
+6. current for filling 
+7. plain transformation for calculation during reflection
+8. spherical wave propagation to create terrain
+9. magnetism to distance away roots
+10. drawing circles
+11. drawing ellipses
+12. drawing triangles
+13. drawing quadrilaterals
+14. drawing polygons
+15. drawing cubes
+16. drawing cuboids
+17. drawing spheres
+18. drawing ellipsoids
+19. drawing cylinders
+20. drawing cones
+21. drawing cone frustums
+22. drawing truncated pyramids
+23. border traversing using vectors
+
+-Moon dimension
+-Mars dimension
+-rusting iron golems
+-mirrors
