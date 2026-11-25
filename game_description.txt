@@ -1,5 +1,3 @@
 The goal of the game is to survive as long as possible and explore as much territory as you can. The game world is made 
-of blocks, which can be used for building. Players can choose between two world generation modes: a pre-built map of 
-Hungary or a randomly generated world. The world is populated with living organisms, including animals, plants, and 
-fungi—with certain animals capable of attacking the player. Dynamic weather is also implemented, meaning extreme temperatures 
-can reduce the player's health.
+of blocks, which can be used for building. The world is populated with living organisms, including animals, plants, and 
+fungi—with certain animals capable of attacking the player.
